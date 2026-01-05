@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import joblib
 
-model = joblib.load("f:/nifty-ml-project/code/v19_model.pkl")
+model = joblib.load("v19_model.pkl")
 
 def ai_predict_next(df):
     df = df.copy()
@@ -77,4 +77,5 @@ def ai_predict_next(df):
     return {
         "direction": "UP" if pred == 1 else "DOWN",
         "confidence": round(float(probs.max()) * 100, 2)
+
     }
